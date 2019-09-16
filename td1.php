@@ -1,24 +1,21 @@
 <?php
-echo date('l F d, Y');
+function start_page($title)
+{
+    echo ' <!DOCTYPE html> <html
+lang="fr"><head><title>' . PHP_EOL . $title . '</title></head><body><hr/><br/><strong>Calculatrice</strong><br/><hr/></body>' . PHP_EOL
+    ;
+};
 ?>
 
+
 <?php
-$jour = date('l F d, Y');
+start_page('Calculatrice');
 ?>
-<br>
-<?php
-echo $jour;
-?>
-<br>
-<?php
-$jour = date('d/m/Y', strtotime('2020-04-01'));
-?>
-<br>
-<?php
-echo $jour;
-?>
-<br>
-<?php
-$d = date('l N d,Y');
-echo $d;
-?>
+<form>
+    <input checked="checked" type="radio" name="op" value="*"/>*<br/>
+    <input type="radio" name="op" value="+"/>+<br/>
+    <input type="radio" name="op" value="-"/>-<br/>
+    <input type="radio" name="op" value="/"/>/<br/>
+ </form>
+
+
