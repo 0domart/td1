@@ -21,7 +21,8 @@ start_page('Calculatrice');
 </form>
 <form action="calcul.php" method="post">
     <input type="radio" name="op3" value="="/>=<br/>
-    <input type="radio" name="op4"value="clear"/>clear<br/>
  </form>
-
+<form>
+    <input type="radio" name="op4"value="clear"/>clear<br/>
+</form>
 
