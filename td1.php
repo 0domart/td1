@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <p>Titre</p>p>
+    <p>Titre</p>
 </head>
 <body>
 <?php
