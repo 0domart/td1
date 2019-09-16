@@ -24,6 +24,10 @@ elseif('+'== $op)
 {
     $res = $op1 + $op2;
 }
+elseif('/'== $op)
+{
+    $res = $op1 % $op2;
+}
 else
 {
     echo'<br/><strong>opérateur'.$op.'nongéré</strong>';
