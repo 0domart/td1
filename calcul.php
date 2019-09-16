@@ -15,10 +15,9 @@ start_page('CalculatriceResultat');
 <?php
 $op1 = $_POST['op1'];
 $op2 = $_POST['op2'];
-$op = $_POST['op'];
+$op = $_GET['op'];
 
-$action = $_GET['action'];
-echo $action;
+echo $op1 + $op + $op2;
 if('*'== $action)
 {
     $res = $op1 * $op2;
