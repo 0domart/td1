@@ -2,11 +2,11 @@
 function start_page($title)
 {
     echo ' <!DOCTYPE html> <html
-lang="fr"><head><title>' . PHP_EOL . $title . '</title></head><body>' . PHP_EOL
+lang="fr"><head><title><hr><br><strong>' . PHP_EOL . $title . '</strong></hr></title></br></title></head><body>' . PHP_EOL
     ;
 };
 ?>
 
 <?php
-start_page('titre');
+start_page('test');
 ?>
