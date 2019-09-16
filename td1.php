@@ -2,7 +2,7 @@
 function start_page($title)
 {
     echo ' <!DOCTYPE html> <html
-lang="fr"><head><title><hr><br><strong>' . PHP_EOL . $title . '</strong></hr></title></br></title></head><body>' . PHP_EOL
+lang="fr"><head><title>'<hr><br><strong> . PHP_EOL . $title . </strong></hr>'</title><</head><body>' . PHP_EOL
     ;
 };
 ?>
