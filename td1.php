@@ -20,3 +20,5 @@ echo $jour;
 <br>
 <?php
 $d = strtotime($jour);
+echo $d;
+?>
