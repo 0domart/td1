@@ -11,7 +11,7 @@ lang="fr"><head><title>' . PHP_EOL . $title . '</title></head><body><hr/><br/><s
 <?php
 start_page('Calculatrice');
 ?>
-<form>
+echo '<form>
     <input type="text" name="op1" /> <br/>
     <input type="text" name="op2" /> <br/>
     <input checked="checked" type="radio" name="op" value="*"/>*<br/>
@@ -25,5 +25,5 @@ start_page('Calculatrice');
  </form>
 <form>
     <input type="radio" name="op4"value="clear"/>clear<br/>
-</form>
+</form>'
 
