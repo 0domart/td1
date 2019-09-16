@@ -19,6 +19,6 @@ echo $jour;
 ?>
 <br>
 <?php
-$d = date('l Juin d,Y');
+$d = date('l N d,Y');
 echo $d;
 ?>
