@@ -27,8 +27,8 @@ elseif('+'== $op)
 }
 else
 {
-    echo\'<br/><strong>opérateur\'.$op .\'nongéré</strong>\';
+    echo'<br/><strong>opérateur'.$op.'nongéré</strong>';
 }
-if (isset($res)) echo $op1. $op . $op2 . \'=\' . $res;
+if (isset($res)) echo $op1. $op . $op2 . '=' . $res;
+end_page();
 ?>
-
