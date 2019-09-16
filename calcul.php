@@ -18,18 +18,18 @@ $op2 = $_POST['op2'];
 $op = $_GET['op'];
 
 echo $op1  .  $op2;
-if('*'== $action)
+if('*'== $op)
 {
     $res = $op1 * $op2;
 }
-elseif('+'== $action)
+elseif('+'== $op)
 {
     $res = $op1 + $op2;
 }
 else
 {
-    echo'<br/><strong>opérateur'.$action.'nongéré</strong>';
+    echo'<br/><strong>opérateur'.$op 'nongéré</strong>';
 }
-if (isset($res)) echo $op1. $action . $op2 . '=' . $res;
+if (isset($res)) echo $op1. $op . $op2 . '=' . $res;
 ?>
 
