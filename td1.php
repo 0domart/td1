@@ -18,6 +18,8 @@ start_page('Calculatrice');
     <input type="radio" name="op" value="+"/>+<br/>
     <input type="radio" name="op" value="-"/>-<br/>
     <input type="radio" name="op" value="/"/>/<br/>
+    <input type="radio" name="submit" value=" = "/>/<br/>
+    <input type="radio" name="clear" value="clear"/>/<br/>
  </form>
 
 
