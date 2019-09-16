@@ -16,7 +16,7 @@ $op1 = $_POST['op1'];
 $op2 = $_POST['op2'];
 $op = $_GET['op'];
 
-echo $op1. $op2;
+echo '$op1. $op2';
 if('*'== $op)
 {
     $res = $op1 * $op2;
