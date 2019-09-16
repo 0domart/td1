@@ -19,6 +19,6 @@ echo $jour;
 ?>
 <br>
 <?php
-$d = strtotime($jour);
+$d = date($jour);
 echo $d;
 ?>
