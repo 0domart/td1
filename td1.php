@@ -15,9 +15,10 @@ start_page('Calculatrice');
     <input type="text" name="op1" /> <br/>
     <input type="text" name="op2" /> <br/>
     <input checked="checked" type="radio" name="op" value="*"/>*<br/>
-    <input type="radio" name="op" value="+"/>+<br/>
-    <input type="radio" name="op" value="-"/>-<br/>
-    <input type="radio" name="op" value="/" />/<br/>
+    <input checked="checked" type="radio" name="op" value="/"/>/<br/>
+    <input checked="checked" type="radio" name="op" value="-"/>-<br/>
+    <input checked="checked" type="radio" name="op" value="+"/>+<br/>
+
 </form>
 <form action="calcul.php" method="post">
     <input type="radio" name="op3" value="="/>=<br/>
