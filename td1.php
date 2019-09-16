@@ -15,7 +15,6 @@ echo '<br>';
 echo $var1;
 echo '<br>';
 echo $var2;
-echo $var1 + $var3;
 ?>
 </body>
 </html
