@@ -25,5 +25,6 @@ echo '<form>
  </form>
 <form>
     <input type="radio" name="op4"value="clear"/>clear<br/>
-</form>'
+</form>
+';
 
