@@ -26,7 +26,11 @@ elseif('+'== $op)
 }
 elseif('/'== $op)
 {
-    $res = $op1 % $op2;
+    $res = $op1 / $op2;
+}
+elseif('-'== $op)
+{
+    $res = $op1 - $op2;
 }
 else
 {
