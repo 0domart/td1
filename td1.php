@@ -15,7 +15,7 @@ echo '
     <form action = "calcul.php" method = "get">
     <input type = "text" name = "op1" ><br>
     <input type = "text" name = "op2" ><br>
-    <input type = "submit" name = "op3" ><br>';
+    <input type = "submit" name = "op3" >Submit<br>';
 for($cpt=0;$cpt<=3;++$cpt)
 {
     echo '<input ';
