@@ -2,6 +2,6 @@
 $op1 = $_POST['op1'];
 $op2 = $_POST['op2'];
 $op = $_POST['op'];
-
-echo $op1 + $op2
 ?>
+
+<?php echo "$op1 + $op2"; ?>
