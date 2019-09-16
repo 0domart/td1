@@ -16,5 +16,21 @@ start_page('CalculatriceResultat');
 $op1 = $_POST['op1'];
 $op2 = $_POST['op2'];
 $op = $_POST['op'];
-echo $op1 + $op2 ;
+
+$action = $_GET['action'];
+echo $action;
+if('*'== $action)
+{
+    $res = $op1 * $op2;
+}
+elseif('+'== $action)
+{
+    $res = $op1 + $op2;
+}
+else
+{
+    echo'<br/><strong>opérateur'.$action.'nongéré</strong>';
+}
+if (isset($res)) echo $op1. $action . $op2 . '=' . $res;
 ?>
+
