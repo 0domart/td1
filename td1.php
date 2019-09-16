@@ -19,5 +19,6 @@ echo $jour;
 ?>
 <br>
 <?php
-echo date($jour);
+$next = strtotime('2020-04-01', date('d/m/Y'));
+echo $next;
 ?>
