@@ -14,8 +14,8 @@ $operateurs = '*+-/';
 echo '
     <form action = "calcul.php" method = "get">
     <input type = "text" name = "op1" ><br>
-    <input type = "text" name = "op2" ><br>
-    <input type = "submit" name = "op3" >Submit<br>';
+    <input type = "text" name = "op2" ><br>';
+
 for($cpt=0;$cpt<=3;++$cpt)
 {
     echo '<input ';
@@ -25,5 +25,6 @@ for($cpt=0;$cpt<=3;++$cpt)
     }
     echo'type="radio" name="op" value="'.$operateurs[$cpt].'"/>'.$operateurs[$cpt].'<br/>
         '."\n";}
+echo '<input type = "submit"><br>';
 echo '</form>';
 ?>
