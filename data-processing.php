@@ -1,6 +1,6 @@
 <?php
 include 'utils.inc.php';
-?>
+?>f
 
 <?php
 start_page('Data-Processing');
@@ -19,10 +19,10 @@ if ($action == 'mailer') {
     $pays = $_POST['pays'];
     $cgu = $_POST['cgu'];
 
-    echo '<br><p>zadzadazd</p>';
     $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL;
     $message .= 'Email : ' . $email . PHP_EOL;
     $message .= 'Mot de passe : ' . PHP_EOL . $mdp;
+
     echo $message;
 
 }
