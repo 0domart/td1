@@ -15,7 +15,7 @@ if ($action == 'mailer') {
     $pays = $_POST['pays'];
     $cgu = $_POST['cgu'];
 
-
+    echo '<br><p>zadzadazd</p>';
     $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL;
     $message .= 'Email : ' . $email . PHP_EOL;
     $message .= 'Mot de passe : ' . PHP_EOL . $mdp;
