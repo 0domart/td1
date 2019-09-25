@@ -33,4 +33,4 @@ if (mail('ght2bb@gmail.com', 'cc', $message))
 else echo 'Mail non envoyé :(';
 
 ?>
-<a href=".."><button>Retour</button></a>
+<a href="http://odomart.alwaysdata.net/tdphp/Formulaire.php"><button>Retour</button></a>
