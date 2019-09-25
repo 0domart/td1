@@ -24,4 +24,9 @@ include 'utils.inc.php';
         <input name="action" type="submit" value="mailer">
     </form>
 
+
+    $rub1 = 'Lire la BD';
+    $rub1addr = 'base.php';
+    <a href="<?= $rub1addr; ?>"><button><?= $rub1; ?></button></a>
+
 <?php end_page(); ?>
