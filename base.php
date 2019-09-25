@@ -30,7 +30,6 @@ while($dbRow = mysqli_fetch_assoc($dbResult))
 {
 echo $dbRow['id'] . '<br/>';
 echo $dbRow['mail'] . '<br/>';
-echo date('d.m.Y', strtotime($dbRow['date']));
 echo '<br/><br/>';
 }
 ?>
