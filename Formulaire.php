@@ -24,3 +24,4 @@ include 'utils.inc.php';
         <input name="action" type="submit" value="mailer">
     </form>
 
+<?php end_page(); ?>
