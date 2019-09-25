@@ -11,7 +11,7 @@ start_page('Data-Processing');
 $action = $_POST['action'];
 if ($action == 'mailer') {
     $id = $_POST['id'];
-    $sex = $_POST['sexe'];
+    $sexe = $_POST['sexe'];
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
     $verfimdp = $_POST['verifmdp'];
@@ -19,10 +19,12 @@ if ($action == 'mailer') {
     $pays = $_POST['pays'];
     $cgu = $_POST['cgu'];
 
-    $message = 'Voici vos identifiants d\'inscription :' . PHP_EOL;
-    $message .= 'Email : ' . $email . PHP_EOL;
-    $message .= 'Mot de passe : ' . PHP_EOL . $mdp;
-
+    $message = 'Identifiant: ' . $id . PHP_EOL;
+    $message .= 'Sexe : ' . $sexe . PHP_EOL;
+    $message .= 'E-mail : ' . $email . PHP_EOL;
+    $message .= 'Password : ' . $mdp . PHP_EOL;
+    $message .= 'Telephone : ' . $tel . PHP_EOL;
+    $message .= 'Pays : ' . $pays . PHP_EOL;
     echo $message;
 
 }

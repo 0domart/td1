@@ -23,3 +23,5 @@ include 'utils.inc.php';
         <input type="checkbox" id="cgu" name="cgu" placeholder="Accepter les CGU">
         <input name="action" type="submit" value="mailer">
     </form>
+
+<?php end_page(); ?>
