@@ -4,11 +4,11 @@ include 'utils.inc.php';
 
 <?php start_page("Formulaire"); ?>
 
-    <input  method= "post">
+    <input action="data-processing.php" method="post">
         <input type = "text" name = "Id" placeholder="Identifiant"><br>
-        <input type = "radio" id="male" name="sexe" value="Homme" ><br>
+        <input type = "radio" id="male" name="sexe" value="homme" ><br>
         <label for="male">Homme</label>
-        <input type = "radio" id="femme" name="sexe" value="Femme" ><br>
+        <input type = "radio" id="femme" name="sexe" value="femme" ><br>
         <label for="femme">Femme</label>
         <input type="text" name="email" placeholder="email"><br>
         <input type="password" name="mdp" placeholder="Mot de Passe">
@@ -21,7 +21,7 @@ include 'utils.inc.php';
             <option value="Julien Dupont">Julien Dupont</option>
         </select>
         <input type="checkbox" id="cgu" name="cgu" placeholder="Accepter les CGU">
-        <input name="action" type="submit">
+        <input name="action" type="submit" value="mailer">
     </form>
 
 
