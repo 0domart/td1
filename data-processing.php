@@ -28,8 +28,9 @@ if ($action == 'mailer') {
     echo $message;
 
 }
-if (mail('godestj@gmail.com', 'cc', $message))
+if (mail('ght2bb@gmail.com', 'cc', $message))
     echo 'Mail envoyé !';
 else echo 'Mail non envoyé :(';
 
 ?>
+<a href=".."><button>Retour</button></a>
