@@ -4,7 +4,7 @@ include 'utils.inc.php';
 
 <?php start_page("Formulaire"); ?>
 
-    <input action="data-processing.php" method="post">
+    <form action="data-processing.php" method="post">
         <input type = "text" name = "Id" placeholder="Identifiant"><br>
         <input type = "radio" id="male" name="sexe" value="homme" ><br>
         <label for="male">Homme</label>
