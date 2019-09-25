@@ -7,8 +7,7 @@ start_page('Data-Processing');
 $action = $_POST['action'];
 if ($action == 'mailer') {
     $id = $_POST['id'];
-    $male = $_POST['male'];
-    $femme = $_POST['femme'];
+    $sex = $_POST['sexe'];
     $email = $_POST['email'];
     $mdp = $_POST['mdp'];
     $verfimdp = $_POST['verifmdp'];
