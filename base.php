@@ -1,5 +1,5 @@
 <?php
-$dbLink = mysqli_connect(mysql-odomart.alwaysdata.net, odomart_tp2, julien69960)
+$dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart_tp2', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 
 mysqli_select_db($dbLink , odomart_td2)
