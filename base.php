@@ -3,6 +3,7 @@ $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , 'odomart_tp2')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
 $query = 'SELECT id, email, date FROM user';
 if(!($dbResult = mysqli_query($dbLink, $query)))
 {
@@ -13,7 +14,7 @@ if(!($dbResult = mysqli_query($dbLink, $query)))
     echo 'Requête : ' . $query . '<br/>';
     exit();
 }
-while($dbRow = mysqli_fetch_assoc($dbResult))
+ while($dbRow = mysqli_fetch_assoc($dbResult))
 {
     echo $dbRow['id'] . '<br/>';
     echo $dbRow['mail'] . '<br/>';
