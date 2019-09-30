@@ -21,4 +21,4 @@ while($dbRow = mysqli_fetch_assoc($dbResult))
     echo '<br/><br/>';
 }
 ?>
-<a href="index.php"><button>Revenir</button></a>
+<a href="Formulaire.php"><button>Revenir</button></a>
