@@ -38,7 +38,7 @@ else echo 'Mail non envoyé :(';
 <?php
 $today = date('Y-m-d');
 $query = 'INSERT INTO user (login, sexe, email, password, phone, pays, date)';
-$query .= ' VALUES (\'' . $id . '\',  \'' . $sexe . '\', \'' . $email . '\', \'' . $mdp . '\', ' . $tel . ', \'' . $pays . '\', NOW());'
+$query .= ' VALUES (\'' . $id . '\',  \'' . $sexe . '\', \'' . $email . '\', \'' . $mdp . '\', ' . $tel . ', \'' . $pays . '\', $today);'
 ?>
 
 <?php
@@ -50,6 +50,10 @@ echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
 // Affiche la requête envoyée.
 echo 'Requête : ' . $query . '<br/>';
 exit();
+}
+else {
+
+    echo 'Votre inscription ('. $id . ') a été enregistré ';
 }
 ?>
 
