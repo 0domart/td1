@@ -28,9 +28,9 @@ if(!($dbResult = mysqli_query($dbLink, $query)))
 
 while($dbRow = mysqli_fetch_assoc($dbResult))
 {
-echo $dbRow['id'] . '<br/>';
-echo $dbRow['mail'] . '<br/>';
-echo '<br/><br/>';
+    echo $dbRow['id'] . '<br/>';
+    echo $dbRow['mail'] . '<br/>';
+    echo '<br/><br/>';
 }
 ?>
 <a href="Formulaire.php"><button>Revenir</button></a>

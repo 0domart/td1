@@ -33,4 +33,25 @@ if (mail('ght2bb@gmail.com', 'cc', $message))
 else echo 'Mail non envoyé :(';
 
 ?>
+
+
+<?php
+$today = date('Y-m-d');
+$query = 'INSERT INTO user (login, sexe, email, password, phone, pays, date)';
+$query .= ' VALUES (\'' . $id . '\',  \'' . $sexe . '\', \'' . $email . '\', \'' . $mdp . '\', ' . $tel . ', \'' . $pays . '\', NOW());'
+?>
+
+<?php
+if(!($dbResult = mysqli_query($dbLink, $query)))
+{
+echo 'Erreur dans requête<br />';
+// Affiche le type d'erreur.
+echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
+// Affiche la requête envoyée.
+echo 'Requête : ' . $query . '<br/>';
+exit();
+}
+?>
+
+
 <a href="http://odomart.alwaysdata.net/tdphp/Formulaire.php"><button>Retour</button></a>
