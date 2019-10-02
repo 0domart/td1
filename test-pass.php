@@ -1,13 +1,13 @@
 <?php
 include 'utils.inc.php';
-$login = $_POST['login'];
-$pwd = $_POST['pwd'];
+$login = $_POST['id'];
+$pwd = $_POST['mdp'];
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , 'odomart_tp2')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-$query = 'SELECT * FROM user WHERE login = \'' . $login . '\'';
+$query = 'SELECT * FROM user WHERE id = \'' . $login . '\'';
 if(!($dbQuery = mysqli_query($dbLink, $query)))
 {
     echo 'Erreur de requête<br/>';
@@ -22,7 +22,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
-            $_SESSION['pwd'] = $pwd;
+            $_SESSION['mdp'] = $pwd;
             if (!($updateQuery = mysqli_query($dbLink, 'UPDATE user SET nbConnections = nbConnections + 1 WHERE login = \'' . $login . '\''))) {
                 echo 'Erreur de requête<br/>';
                 // Affiche le type d'erreur.
