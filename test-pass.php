@@ -1,7 +1,7 @@
 <?php
 include 'utils.inc.php';
-$login = $_POST['id'];
-$pwd = $_POST['mdp'];
+$login = $_POST['login'];
+$pwd = $_POST['pwd'];
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
