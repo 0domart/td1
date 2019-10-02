@@ -19,15 +19,35 @@ if ($action == 'mailer') {
     $pays = $_POST['pays'];
     $cgu = $_POST['cgu'];
 
-    $message = 'Identifiant: ' . $id . PHP_EOL ;
+    $message = 'Identifiant: ' . $id . PHP_EOL;
     $message .= 'Sexe : ' . $sexe . PHP_EOL;
     $message .= 'E-mail : ' . $email . PHP_EOL;
     $message .= 'Password : ' . $mdp . PHP_EOL;
     $message .= 'Telephone : ' . $tel . PHP_EOL;
     $message .= 'Pays : ' . $pays . PHP_EOL;
     echo $message;
-
 }
+else if ($action = 'rec') {
+
+    $id = $_POST['id'];
+    $sexe = $_POST['sexe'];
+    $email = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $verfimdp = $_POST['verifmdp'];
+    $tel = $_POST['tel'];
+    $pays = $_POST['pays'];
+    $cgu = $_POST['cgu'];
+
+    $file='data.txt';if(!($file=fopen($file,'a+')))
+    {
+        echo'Erreurd\'ouverture';exit();
+    }
+    fputs($file,'id:'.$id.',email:'.$email.PHP_EOL);
+    fclose($file);
+}
+
+
+
 if (mail('ght2bb@gmail.com', 'cc', $message))
     echo 'Mail envoyé !';
 else echo 'Mail non envoyé :(';
