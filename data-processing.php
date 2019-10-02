@@ -38,12 +38,21 @@ else if ($action = 'rec') {
     $pays = $_POST['pays'];
     $cgu = $_POST['cgu'];
 
-    $file='data.txt';if(!($file=fopen($file,'a+')))
+    $file='data.txt';
+    if(!($file=fopen($file,'a+')))
     {
         echo'Erreurd\'ouverture';exit();
     }
     fputs($file,'id:'.$id.',email:'.$email.PHP_EOL);
     fclose($file);
+
+    $file='data.txt';
+    if(!($file=fopen($file,'r'))){echo'Erreurdelecture';exit();}
+    echo'Listedesutilisateurs:<br/>';
+    $cpt=1;
+    while($line=fgets($file,255)){
+        echo'Utilisateurn'.$cpt.':'.$line.'<br/>';++$cpt;
+    }
 }
 
 
