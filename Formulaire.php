@@ -23,7 +23,6 @@ include 'utils.inc.php';
         <input type="checkbox" id="cgu" name="cgu" placeholder="Accepter les CGU">
         <input name="action" type="submit" value="mailer">
     </form>
-
     <form action="data-processing.php" method="post">
         <input type = "text" name = "Id" placeholder="Identifiant"><br>
         <input type = "radio" id="male" name="sexe" value="homme" ><br>
@@ -41,7 +40,7 @@ include 'utils.inc.php';
             <option value="Julien Dupont">Julien Dupont</option>
         </select>
         <input type="checkbox" id="cgu" name="cgu" placeholder="Accepter les CGU">
-        <input name="action" type="submit" value="red">
+        <input name="rec" type="submit" value="rec">
     </form>
 
 <?php
