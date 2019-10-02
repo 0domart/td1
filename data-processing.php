@@ -55,7 +55,7 @@ else if ($action = 'rec') {
     }
 }
 
-
+/*
 
 if (mail('ght2bb@gmail.com', 'cc', $message))
     echo 'Mail envoyé !';
@@ -88,3 +88,5 @@ else {
 
 
 <a href="http://odomart.alwaysdata.net/tdphp/Formulaire.php"><button>Retour</button></a>
+
+*/
