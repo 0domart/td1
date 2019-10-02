@@ -1,26 +1,49 @@
 <?php
 include 'utils.inc.php';
-?>
-<?php start_page("Test-pass"); ?>
-<?php
-
-$login = $_POST['Login'];
-$mdp = $_POST['mdp'];
-
-
-$dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
+$login = $_POST['login'];
+$pwd = $_POST['pwd'];
+// BD
+$dbLink = mysqli_connect('mysql-steffen.alwaysdata.net', 'steffen_td2', 'salut123456')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-mysqli_select_db($dbLink, 'odomart_tp2')
+mysqli_select_db($dbLink , 'steffen_td2')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-?>
-<?php
-$req = $dbLink->query("SELECT * FROM users WHERE identifiant = '" . $login . "' AND password = '" . $mdp. "'");
-if ($req->rowCount() == 0){
-    $_SESSION['errors'] = 'Identifiant ou mot de passe invalide !';
-    } else {
-    $_SESSION['success'] = "Vous êtes connecté ! ";
+$query = 'SELECT * FROM user WHERE login = \'' . $login . '\'';
+if(!($dbQuery = mysqli_query($dbLink, $query)))
+{
+    echo 'Erreur de requête<br/>';
+    // Affiche le type d'erreur.
+    echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
+    // Affiche la requête envoyée.
+    echo 'Requête : ' . $query . '<br/>';
+    exit();
+} else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd))) {
+    while ($fetch = mysqli_fetch_assoc($dbQuery)) {
+        if ($fetch['password'] == $pwd) {
+            session_start();
+            $_SESSION['login'] = 'ok';
+            $_SESSION['id'] = $login;
+            $_SESSION['pwd'] = $pwd;
+            if (!($updateQuery = mysqli_query($dbLink, 'UPDATE user SET nbConnections = nbConnections + 1 WHERE login = \'' . $login . '\''))) {
+                echo 'Erreur de requête<br/>';
+                // Affiche le type d'erreur.
+                echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
+                // Affiche la requête envoyée.
+                echo 'Requête : ' . $query . '<br/>';
+                exit();
+            }
+        }
     }
-    ?>
-
-
-<?php end_page(); ?>
+} else {
+    header('Location: login.php?step=ERREUR');
+}
+if ($_SESSION['login'] == 'ok') {
+    if ($login == 'admin')
+        header('Location: admin.php');
+    else {
+        start_page('Bienvenue');
+        echo '<h1> Bienvenue ' . $_SESSION['id'] . '</h1>' . PHP_EOL;
+        end_page();
+    }
+} else {
+    header('Location: login.php?step=ERREUR');
+}
