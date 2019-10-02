@@ -43,16 +43,9 @@ else if ($action = 'rec') {
     {
         echo'Erreurd\'ouverture';exit();
     }
-    fputs($file,'id:'.$id);
+    fputs($file,'id:'. $id);
     fclose($file);
 
-    $file='data.txt';
-    if(!($file=fopen($file,'r'))){echo'Erreurdelecture';exit();}
-    echo'Listedesutilisateurs:<br/>';
-    $cpt=1;
-    while($line=fgets($file,5)){
-        echo'Utilisateurn'.$cpt.':'.$line.'<br/>';++$cpt;
-    }
 }
 
 /*
