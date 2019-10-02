@@ -9,7 +9,7 @@ mysqli_select_db($dbLink , 'odomart_tp2')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
 
-$query = 'SELECT id, email, date FROM user where id= $login';
+$query = 'SELECT id, email, date FROM user';
 
 if(!($dbQuery = mysqli_query($dbLink, $query)))
 {
