@@ -3,7 +3,7 @@ include 'utils.inc.php';
 $login = $_POST['login'];
 $pwd = $_POST['pwd'];
 // BD
-$dbLink = mysqli_connect('mysql-steffen.alwaysdata.net', 'steffen_td2', 'salut123456')
+$dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart_td2', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , 'steffen_td2')
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
