@@ -26,7 +26,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['pwd'] = $pwd;
-            if (!($update_query = mysqli_query($dbLink,'UPDATE USER SET NBCONNECTIONS = NBCONNECTIONS + 1 WHERE ID = '.$local)));
+            if (!($update_query = mysqli_query($dbLink,'UPDATE USER SET NBCONNECTIONS = NBCONNECTIONS + 1 WHERE ID = '.$login)));
         }
     }
 } else {
