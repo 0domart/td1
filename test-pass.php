@@ -1,6 +1,6 @@
 <?php
 include 'utils.inc.php';
-$login = $_POST['login'];
+$login = $_POST['id'];
 $pwd = $_POST['mdp'];
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
