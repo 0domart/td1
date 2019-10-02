@@ -45,8 +45,8 @@ else if ($action = 'rec') {
     }
     fputs($file,'id:'. $id);
     fclose($file);
-
 }
+else echo 'Probleme';
 
 /*
 
