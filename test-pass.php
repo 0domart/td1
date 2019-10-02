@@ -26,6 +26,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['pwd'] = $pwd;
+            if (!($update_query = mysqli_query($dbLink,'UPDATE USER SET NBCONNECTIONS = NBCONNECTIONS + 1 WHERE ID = '.$local)));
         }
     }
 } else {
@@ -34,7 +35,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
 if ($_SESSION['login'] == 'ok') {
     if ($login == 'admin')
         header('Location: admin.php');
-    else {
+    else  {
         start_page('Bienvenue');
         echo '<h1> Bienvenue ' . $_SESSION['id'] . '</h1>' . PHP_EOL;
         end_page();

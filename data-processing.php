@@ -65,7 +65,14 @@ $query .= ' VALUES (\'' . $id . '\',  \'' . $sexe . '\', \'' . $email . '\', \''
 
 <?php
 if(!($dbResult = mysqli_query($dbLink, $query)))
-{
+{    $sexe = $_POST['sexe'];
+    $email = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $verfimdp = $_POST['verifmdp'];
+    $tel = $_POST['tel'];
+    $pays = $_POST['pays'];
+    $cgu = $_POST['cgu'];
+
 echo 'Erreur dans requête<br />';
 // Affiche le type d'erreur.
 echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
