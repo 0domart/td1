@@ -25,9 +25,23 @@ class Livre {
 
         $this->title = (string)$title;
     }
+    public function getAuthor() {
+
+        return $this->author;
+    }
+    public function getEditor() {
+
+        return $this->editor;
+    }
+    public function getNbPages() {
+
+        return $this->pageNb;
+    }
 
     public function Show() {
 
-        echo  'Livre : ' . $this->title . '. Edité par '. $this->editor . '. L\'auteur est : '. $this->author .' et il a ' .$this->pageNb . ' pages';
+        echo  'Le nom du livre est : ' . $this->getTitle() . '. Edité par '. $this->getEditor() . '. L\'auteur est : '. $this->getAuthor() .' et il a ' .$this->getNbPages() . ' pages';
     }
 }
+
+?>
