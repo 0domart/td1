@@ -1,6 +1,6 @@
 <?php
 include 'utils.inc.php';
-$login = $_POST['id'];
+$login = $_POST['login'];
 $pwd = $_POST['mdp'];
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
@@ -22,7 +22,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
-            $_SESSION['mdp'] = $pwd;
+            $_SESSION['pwd'] = $pwd;
             if (!($updateQuery = mysqli_query($dbLink, 'UPDATE user SET nbConnections = nbConnections + 1 WHERE login = \'' . $login . '\''))) {
                 echo 'Erreur de requête<br/>';
                 // Affiche le type d'erreur.
