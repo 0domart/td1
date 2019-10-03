@@ -31,7 +31,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
 } else {
     header('Location: login.php?step=ERREUR');
 }
-/*}
+
 if ($_SESSION['login'] == 'ok') {
     if ($login == 'admin')
         header('Location: admin.php');
@@ -43,5 +43,3 @@ if ($_SESSION['login'] == 'ok') {
 } else {
     header('Location: login.php?step=ERREUR');
 }
-
-*/
