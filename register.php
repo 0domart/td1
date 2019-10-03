@@ -34,7 +34,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     }
     global $dbLink;
     //$password = password_hash($this->password, PASSWORD_BCRYPT, ['10']);
-    $query = "INSERT INTO user (id,mdp) VALUES ('".$pseudo."','".$pwd ."','".$email."','".$sexe."','".$tel."')";
+    $query = "INSERT INTO user (id,mdp, email, sexe, tel) VALUES ('".$pseudo."','".$pwd ."','".$email."','".$sexe."','".$tel."')";
     $result = mysqli_query($dbLink, $query);
     if (!$result) {
         echo 'Impossible d\'exécuter la requête : ' . mysqli_error($dbLink);
