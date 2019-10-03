@@ -26,9 +26,14 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['mdp'] = $pwd;
+
         }
     }
-} else {
+}
+else echo '<p>Salut</p>';
+
+/*
+else {
     header('Location: login.php?step=ERREUR');
 }
 if ($_SESSION['login'] == 'ok') {
@@ -42,3 +47,4 @@ if ($_SESSION['login'] == 'ok') {
 } else {
     header('Location: login.php?step=ERREUR');
 }
+/*
