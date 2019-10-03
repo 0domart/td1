@@ -19,16 +19,13 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     // Affiche la requête envoyée.
     echo 'Requête : ' . $query . '<br/>';
     exit();
-} else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd))) {
-    echo '<h1> Bienvenue';
+} else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd)))
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
-        echo '<h1> Bienvenue';
-        if ($fetch['password'] == $pwd) {
+        if ($fetch['mdp'] == $pwd) {
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
-            $_SESSION['pwd'] = $pwd;
-            echo '<h1> Bienvenue';
+            $_SESSION['mdp'] = $pwd;
         }
     }
 } else {
