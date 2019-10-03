@@ -2,7 +2,6 @@
 include 'utils.inc.php';
 $pseudo = $_POST['login'];
 $pwd = $_POST['pwd'];
-
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
@@ -11,10 +10,7 @@ or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
 
 
-
-
-
-$query = "SELECT * FROM user where pseudo = '$pseudo ' LIMIT 1 ";
+$query = "SELECT id FROM user ";
 
 if(!($dbQuery = mysqli_query($dbLink, $query)))
 {
@@ -26,17 +22,25 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     exit();
 } else if (isset($_POST['action']) && !empty(trim($pseudo)) && !empty(trim($pwd))) {
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
-        if ($fetch['mdp'] == $pwd) {
-            session_start();
-            $_SESSION['login'] = 'ok';
-            $_SESSION['id'] = $pseudo;
-            $_SESSION['mdp'] = $pwd;
+        if ($fetch['id'] == $pseudo) {
+            echo '<p> deja utilisé</p>';
         }
+
+    }
+    global $dbLink;
+    //$password = password_hash($this->password, PASSWORD_BCRYPT, ['10']);
+    $query = "INSERT INTO user (id,mdp) VALUES ('" . $this->pseudo . "','" . $this->pwd . "')";
+    $result = mysqli_query($dbLink, $query);
+    if (!$result) {
+        echo 'Impossible d\'exécuter la requête : ' . mysqli_error($dbLink);
+        return false;
+    } else {
+        return true;
     }
 }
 
 else {
-    header('Location: login.php?step=ERREUR1');
+    header('Location: login.php?step=ERREUR');
 }
 
 
@@ -55,4 +59,3 @@ if ($_SESSION['login'] == 'ok') {
 }
 
 
-<?php
