@@ -26,7 +26,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['pwd'] = $pwd;
-            start_page('Bienvenue');
+            echo '<H1> Bienvenue';
         }
     }
 } else {
