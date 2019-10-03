@@ -40,6 +40,8 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
         echo 'Impossible d\'exécuter la requête : ' . mysqli_error($dbLink);
         return false;
     } else {
+        $message = "Merci";
+        mail($email,'Merci pour votre inscription sur le site FreeMessenger', $message);
         return true;
     }
 }
@@ -62,5 +64,3 @@ if ($_SESSION['login'] == 'ok') {
 } else {
     header('Location: login.php?step=ERREUR2');
 }
-
-
