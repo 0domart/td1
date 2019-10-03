@@ -47,4 +47,4 @@ if ($_SESSION['login'] == 'ok') {
 } else {
     header('Location: login.php?step=ERREUR');
 }
-/*
+*/
