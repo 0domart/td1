@@ -2,6 +2,11 @@
 include 'utils.inc.php';
 $pseudo = $_POST['login'];
 $pwd = $_POST['pwd'];
+$email = $_POST['email'];
+$sexe = $_POST['sexe'];
+$tel = $_POST['tel'];
+
+
 // BD
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
 or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
@@ -29,7 +34,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     }
     global $dbLink;
     //$password = password_hash($this->password, PASSWORD_BCRYPT, ['10']);
-    $query = "INSERT INTO user (id,mdp) VALUES ('" . $pseudo . "','" . $pwd . "')";
+    $query = "INSERT INTO user (id,mdp) VALUES ('".$pseudo."','".$pwd ."','".$email."','".$sexe."','".$tel."')";
     $result = mysqli_query($dbLink, $query);
     if (!$result) {
         echo 'Impossible d\'exécuter la requête : ' . mysqli_error($dbLink);
