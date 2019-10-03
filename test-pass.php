@@ -21,12 +21,12 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     exit();
 } else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd))) {
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
+        echo '<h1> sss </h1>h1';
         if ($fetch['mdp'] == $pwd) {
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['mdp'] = $pwd;
-
         }
     }
 }
