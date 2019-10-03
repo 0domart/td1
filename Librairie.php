@@ -67,7 +67,7 @@ class Librairie
 
     public function getAddress()
     {
-        return $this->address;
+        return $this->adress;
     }
 
     public function setAddress($address)

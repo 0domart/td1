@@ -10,6 +10,4 @@ include 'utils.inc.php';
     <input name="action" type="submit" >
 </form>
 
-
-
 <?php end_page(); ?>

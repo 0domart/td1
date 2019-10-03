@@ -26,12 +26,12 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['pwd'] = $pwd;
-            if (!($update_query = mysqli_query($dbLink,'UPDATE USER SET NBCONNECTIONS = NBCONNECTIONS + 1 WHERE ID = '.$login)));
         }
     }
 } else {
     header('Location: login.php?step=ERREUR');
 }
+/*}
 if ($_SESSION['login'] == 'ok') {
     if ($login == 'admin')
         header('Location: admin.php');
@@ -43,3 +43,5 @@ if ($_SESSION['login'] == 'ok') {
 } else {
     header('Location: login.php?step=ERREUR');
 }
+
+*/
