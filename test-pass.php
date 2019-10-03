@@ -19,7 +19,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     // Affiche la requête envoyée.
     echo 'Requête : ' . $query . '<br/>';
     exit();
-} else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd)))
+} else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd))) {
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
         if ($fetch['mdp'] == $pwd) {
             session_start();
@@ -31,7 +31,6 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
 } else {
     header('Location: login.php?step=ERREUR');
 }
-
 if ($_SESSION['login'] == 'ok') {
     if ($login == 'admin')
         header('Location: admin.php');
