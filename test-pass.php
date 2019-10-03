@@ -20,13 +20,15 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     echo 'Requête : ' . $query . '<br/>';
     exit();
 } else if (isset($_POST['action']) && !empty(trim($login)) && !empty(trim($pwd))) {
+    echo '<h1> Bienvenue';
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
+        echo '<h1> Bienvenue';
         if ($fetch['password'] == $pwd) {
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $login;
             $_SESSION['pwd'] = $pwd;
-            echo '<H1> Bienvenue';
+            echo '<h1> Bienvenue';
         }
     }
 } else {
