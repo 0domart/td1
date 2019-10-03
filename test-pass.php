@@ -40,7 +40,7 @@ else {
 if ($_SESSION['login'] == 'ok') {
 
     if ($login == 'admin')
-        header('Location: admin.php');
+        header('Location: Formulaire.php');
     else  {
         start_page('Bienvenue');
         echo '<h1> Bienvenue ' . $_SESSION['id'] . '</h1>' . PHP_EOL;
