@@ -26,7 +26,7 @@ if(!($dbQuery = mysqli_query($dbLink, $query)))
     exit();
 } else if (isset($_POST['action']) && !empty(trim($pseudo)) && !empty(trim($pwd))) {
     while ($fetch = mysqli_fetch_assoc($dbQuery)) {
-        if (pawword_verify($pwd, $fetch['mdp']) {
+        if (pawword_verify($pwd, $fetch['mdp'])) {
             session_start();
             $_SESSION['login'] = 'ok';
             $_SESSION['id'] = $pseudo;
