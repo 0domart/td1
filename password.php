@@ -3,9 +3,8 @@
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960');
 $bdd = mysqli_select_db($dbLink , 'odomart_tp2');
 
-
+echo "zdadz";
 if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
-    echo "aaa";
     if (!empty($POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($POST['mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
