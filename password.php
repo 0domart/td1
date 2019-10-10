@@ -2,7 +2,7 @@
 session_start();
 
 
-mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960');
+$dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960');
 $bdd = mysqli_select_db($dbLink , 'odomart_tp2');
 
 
@@ -10,6 +10,7 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
     if (!empty($POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($POST['mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
+
             $mailexists = $bdd > prepare('SELECT id, pseudo FROM membres WHERE email = ?');
             $mailexists->execute(array($recup_mail));
             $mailexists_count = $mailexists->rowCount();
