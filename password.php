@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 
 $dbLink = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960');
 $bdd = mysqli_select_db($dbLink , 'odomart_tp2');
