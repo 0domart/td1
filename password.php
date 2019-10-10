@@ -12,8 +12,8 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
             $mailexists = mysqli_query($dbLink, $query);
 //            $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?')
 //            $mailexists->execute(array($recup_mail));
-            $mailexists_count = $mailexists->rowCount();
-            if ($mailexists_count == 1) {
+//            $mailexists_count = $mailexists->rowCount();
+            if (!empty($mailexists)) {
                 $pseudo = $mailexists->fetch();
                 //$pseudo = $pseudo['pseudo'];
                 $_SESSION['recup_mail'] = $recup_mail;
