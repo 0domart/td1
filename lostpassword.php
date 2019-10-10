@@ -8,7 +8,7 @@ include 'utils.inc.php';
 <h4 class="title-element">Récupération de mot de passe</h4>
 
 <?php { ?>
-    <form method="post" action="password.php">
+    <form method="post">
         <input type="email" placeholder="Votre adresse mail" name="recup_mail"/><br/>
         <input type="submit" value="Valider" name="recup_submit"/>
     </form>

@@ -41,7 +41,7 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
                                <tr>
                                  <td>
                                    <div align="center">Bonjour<b>' . $pseudo . '</b>,</div>
-                                   Voici votre code de récupération: <b>' . $recup_code . '</b>
+                                   Voici votre nouveau mot de passe <b>' . $recup_code . '</b>
                                  </td>
                                </tr>
                                <tr>
