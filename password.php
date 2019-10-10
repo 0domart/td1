@@ -12,7 +12,7 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($POST['mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
 
-            $mailexists = $bdd > prepare('SELECT id FROM membres WHERE email = ?');
+            $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?');
             $mailexists->execute(array($recup_mail));
             $mailexists_count = $mailexists->rowCount();
             if ($mailexists_count == 1) {
@@ -24,7 +24,7 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
                     $recup_code .= mt_rand(0, 9);
                 }
                 $_SESSION['recup_code'] = $recup_code;
-                $recup_insert = $bdd->prepare('UPDATE users SET mdp = ? where email = ?');
+                $recup_insert = $bdd->prepare('UPDATE user SET mdp = ? where email = ?');
                 $recup_insert->execute(array($recup_code, $recup_mail));
 
                 $header = 'From:"FreeMessenger.com<freemessenger@gmail.com' . "\n";
