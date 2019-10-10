@@ -1,0 +1,52 @@
+body {
+    background-color: white;
+}
+
+.logo {
+	margin-left: 24%;
+	margin-top: 30px;
+	margin-bottom :5%;
+	
+}
+
+.tailleLabel {
+    width: 40%;
+
+}
+
+.btn-connexion {
+	width: 30%;
+}
+
+.btn-inscription {
+	
+	width:50%
+}
+
+.hand {
+	margin: 0 18%; 
+    max-width: 1280px; 
+    width: 40%;
+	display: inline-block;
+}
+
+.espace {
+	
+	width:62%;
+}
+
+.ml {
+	margin-left:20%;
+	color:black;
+	letter-spacing: 4px;
+	 font-size: 36px;
+	 font-weight: bold;
+}
+
+.img-tel {
+	
+	display: block;
+	margin-top:3%;
+    margin-right: 15%;
+	float:right;
+}
