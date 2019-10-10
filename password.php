@@ -13,7 +13,7 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
 //            $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?')
 //            $mailexists->execute(array($recup_mail));
 //            $mailexists_count = $mailexists->rowCount();
-            if (empty($mailexists)) {
+            if ($mailexists) {
                 $pseudo = $mailexists->fetch();
                 //$pseudo = $pseudo['pseudo'];
                 $_SESSION['recup_mail'] = $recup_mail;
