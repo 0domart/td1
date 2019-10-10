@@ -2,10 +2,9 @@
 session_start();
 
 
-$bdd = mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960')
-or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-mysqli_select_db($dbLink , 'odomart_tp2')
-or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+mysqli_connect('mysql-odomart.alwaysdata.net', 'odomart', 'julien69960');
+$bdd = mysqli_select_db($dbLink , 'odomart_tp2');
+
 
 if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
     if (!empty($POST['recup_mail'])) {
