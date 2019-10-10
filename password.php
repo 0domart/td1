@@ -12,12 +12,12 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($POST['mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
 
-            $mailexists = $bdd > prepare('SELECT id, pseudo FROM membres WHERE email = ?');
+            $mailexists = $bdd > prepare('SELECT id FROM membres WHERE email = ?');
             $mailexists->execute(array($recup_mail));
             $mailexists_count = $mailexists->rowCount();
             if ($mailexists_count == 1) {
                 $pseudo = $mailexists->fetch();
-                $pseudo = $pseudo['pseudo'];
+                //$pseudo = $pseudo['pseudo'];
                 $_SESSION['recup_mail'] = $recup_mail;
                 $recup_code = "";
                 for ($i = 0; $i <= 8; $i++) {
@@ -41,7 +41,7 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
                              <table width="600px">
                                <tr>
                                  <td>
-                                   <div align="center">Bonjour<b>' . $pseudo . '</b>,</div>
+                                   <div align="center">Bonjour</div>
                                    Voici votre nouveau mot de passe <b>' . $recup_code . '</b>
                                  </td>
                                </tr>
