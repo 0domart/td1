@@ -58,13 +58,13 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
                 mail($recup_mail, "Récupération de mot de passe - FreeMessenger", $message, $header);
                 header("Location:login.php");
             } else {
-                $error = "Cette adresse mail n'est pas enregistrée";
+                echo "Cette adresse mail n'est pas enregistrée";
             }
         } else {
-            $error = "Adresse mail invalide";
+           echo "Adresse mail invalide";
         }
     } else {
-        $error = "Veuillez entrer votre adresse mail";
+        echo  "Veuillez entrer votre adresse mail";
 
 
     }
