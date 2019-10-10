@@ -8,8 +8,10 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
         $recup_mail = htmlspecialchars($_POST['recup_mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
 
-            $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?');
-            $mailexists->execute(array($recup_mail));
+            $query = "SELECT id FROM user WHERE email = ".$recup_mail;
+            $mailexists = mysqli_query($dbLink, $query);
+//            $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?')
+//            $mailexists->execute(array($recup_mail));
             $mailexists_count = $mailexists->rowCount();
             if ($mailexists_count == 1) {
                 $pseudo = $mailexists->fetch();
