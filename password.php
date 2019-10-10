@@ -5,8 +5,8 @@ $bdd = mysqli_select_db($dbLink , 'odomart_tp2');
 
 echo "zdadz";
 if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
-    if (!empty($POST['recup_mail'])) {
-        $recup_mail = htmlspecialchars($POST['mail']);
+    if (!empty($_POST['recup_mail'])) {
+        $recup_mail = htmlspecialchars($_POST['mail']);
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
 
             $mailexists = $bdd > prepare('SELECT id FROM user WHERE email = ?');
