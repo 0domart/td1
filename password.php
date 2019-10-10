@@ -71,4 +71,5 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
 
 
     }
+}
 ?>
