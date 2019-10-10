@@ -13,8 +13,8 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
         if (filter_var($recup_mail, FILTER_VALIDATE_EMAIL)) {
             $mailexists = $bdd > prepare('SELECT id, pseudo FROM membres WHERE email = ?');
             $mailexists->execute(array($recup_mail));
-            $mailexists = $mailexists->rowCount();
-            if ($mailexists == 1) {
+            $mailexists_count = $mailexists->rowCount();
+            if ($mailexists_count == 1) {
                 $pseudo = $mailexists->fetch();
                 $pseudo = $pseudo['pseudo'];
                 $_SESSION['recup_mail'] = $recup_mail;
@@ -30,32 +30,32 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
                 $header .= 'Content-Type:text/html; charset="utf-8"' . "\n";
                 $header .= 'Content-Transfer-Encoding: 8bit';
                 $message = '
-            <html>
-            <head>
-             <title>Récupération de mot de passe - FreeMessenger/title>
-             <meta charset="utf-8" />
-           </head>
-           <body>
-               <div align="center">
-                 <table width="600px">
-                   <tr>
-                     <td>
-                       <div align="center">Bonjour<b>' . $pseudo . '</b>,</div>
-                       Voici votre code de récupération: <b>' . $recup_code . '</b>
-                     </td>
-                   </tr>
-                   <tr>
-                     <td align="center">
-                       <font size="2">
-                         Ceci est un email automatique, merci de ne pas y répondre
-                       </font>
-                     </td>
-                   </tr>
-                 </table>
-               </div>
-             </font>
-           </body>
-           </html>
+                        <html>
+                        <head>
+                         <title>Récupération de mot de passe - FreeMessenger</title>
+                         <meta charset="utf-8" />
+                       </head>
+                       <body>
+                           <div align="center">
+                             <table width="600px">
+                               <tr>
+                                 <td>
+                                   <div align="center">Bonjour<b>' . $pseudo . '</b>,</div>
+                                   Voici votre code de récupération: <b>' . $recup_code . '</b>
+                                 </td>
+                               </tr>
+                               <tr>
+                                 <td align="center">
+                                   <font size="2">
+                                     Ceci est un email automatique, merci de ne pas y répondre
+                                   </font>
+                                 </td>
+                               </tr>
+                             </table>
+                           </div>
+                         </font>
+                       </body>
+                       </html>
            ';
                 mail($recup_mail, "Récupération de mot de passe - FreeMessenger", $message, $header);
                 header("Location:connexion.php");
@@ -71,4 +71,4 @@ if (isset($POST['recup_submit'], $_POST['recup_mail'])) {
 
     }
 }
->
+?>
